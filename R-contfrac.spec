@@ -4,7 +4,7 @@
 #
 Name     : R-contfrac
 Version  : 1.1.12
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/contfrac_1.1-12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/contfrac_1.1-12.tar.gz
 Summary  : Continued Fractions
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-contfrac-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -27,21 +26,22 @@ lib components for the R-contfrac package.
 
 %prep
 %setup -q -c -n contfrac
+cd %{_builddir}/contfrac
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571812758
+export SOURCE_DATE_EPOCH=1589514660
 
 %install
-export SOURCE_DATE_EPOCH=1571812758
+export SOURCE_DATE_EPOCH=1589514660
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
