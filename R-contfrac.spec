@@ -4,7 +4,7 @@
 #
 Name     : R-contfrac
 Version  : 1.1.12
-Release  : 39
+Release  : 40
 URL      : https://cran.r-project.org/src/contrib/contfrac_1.1-12.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/contfrac_1.1-12.tar.gz
 Summary  : Continued Fractions
